@@ -68,16 +68,18 @@
               </div>
           </form>
 
-           <?php
-              // PHP Data Objects(PDO) Sample Code:
+            <?php
+              $host = "padevappserver.database.windows.net";
+              $user = "manzolacaniago";
+              $pass = "P1234566a";
+              $db = "submissazure";
+
               try {
-                  $conn = new PDO("sqlsrv:server = tcp:padevappserver.database.windows.net,1433; Database = padevcdb", "manzolacaniago", "{your_password_here}");
+                  $conn = new PDO("sqlsrv:server = $host; Database = $db, $user, $pass");
                   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              }
-              catch (PDOException $e) {
-                  print("Error connecting to SQL Server.");
-                  die(print_r($e));
-              }
+              } catch (Exception $e) {
+                  echo "Failed: " . $e;
+            }
         
             if (isset($_POST['submit'])) {
                 try {
