@@ -84,8 +84,6 @@
                 $serverName = "tcp:padevappserver.database.windows.net,1433";
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
             ?> 
-        
-         <?php
 
             if (isset($_POST['submit'])) {
                 try {
