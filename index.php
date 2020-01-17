@@ -90,7 +90,7 @@
                     $judul_skripsih = $_POST['judul_skripsih'];
                     // Insert data
                     $sql_insert = "INSERT INTO dbo.submissazure (Nim, nama_mahasiswaa, kd_kelas, judul_skripsih) 
-                        VALUES (?,?,?,?,?)";
+                        VALUES (?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
                     $stmt->bindValue(1, $Nim);
                     $stmt->bindValue(2, $nama_mahasiswaa);
