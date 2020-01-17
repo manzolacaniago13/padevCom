@@ -43,20 +43,20 @@
 
           <form action="index.php" method="POST">
           <div class="form-group">
-                  <label for="nim">Nomor Induk Mahasiswa : </label>
-                  <input type="text" class="form-control" name="Nim" id="nim" required="">
+                  <label for="Nim">Nomor Induk Mahasiswa : </label>
+                  <input type="text" class="form-control" name="Nim" id="Nim" required="">
               </div>
               <div class="form-group">
-                  <label for="names">Nama Mahasiswa : </label>
-                  <input type="text" class="form-control" name="nama_mahasiswa" id="names" required="">
+                  <label for="nama_mahasiswa">Nama Mahasiswa : </label>
+                  <input type="text" class="form-control" name="nama_mahasiswa" id="nama_mahasiswa" required="">
               </div>
               <div class="form-group">
-                  <label for="kode">Kode Kelas : </label>
-                  <input type="text" class="form-control" name="kd_kelas" id="kode" required="" maxlength="10">
+                  <label for="kd_kelas">Kode Kelas : </label>
+                  <input type="text" class="form-control" name="kd_kelas" id="kd_kelas" required="" maxlength="10">
               </div>
               <div class="form-group">
-                  <label for="judul">Judul Pengajuan (Skripsi) : </label>
-                  <input type="text" class="form-control" name="judul_skripsih" id="judul" required="">
+                  <label for="judul_skripsih">Judul Pengajuan (Skripsi) : </label>
+                  <input type="text" class="form-control" name="judul_skripsih" id="judul_skripsih" required="">
               </div>
 
               <input type="submit" class="btn btn-success" name="submit" value="Submit">
@@ -68,40 +68,35 @@
               </div>
           </form>
 
-            <?php
-                // PHP Data Objects(PDO) Sample Code:
-                try {
-                    $conn = new PDO("sqlsrv:server = tcp:padevappserver.database.windows.net,1433; Database = padevcdb", "manzolacaniago", "P1234566a");
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                }
-                catch (PDOException $e) {
-                    print("Error connecting to SQL Server.");
-                    die(print_r($e));
-                }
+           <?php
+            $host = "padevappserver.database.windows.net";
+            $user = "manzolacaniago";
+            $pass = "P1234566a";
+            $db = "padevcdb";
 
-                // SQL Server Extension Sample Code:
-                $connectionInfo = array("UID" => "manzolacaniago", "pwd" => "P1234566a", "Database" => "padevcdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-                $serverName = "tcp:padevappserver.database.windows.net,1433";
-                $conn = sqlsrv_connect($serverName, $connectionInfo);
-            ?>
-        
-        <?php
+            try {
+                $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (Exception $e) {
+                echo "Failed: " . $e;
+            }
+
         
             if (isset($_POST['submit'])) {
                 try {
-                    $nim = $_POST['Nim'];
-                    $names = $_POST['nama_mahasiswa'];
-                    $kode = $_POST['kd_kelas'];
-                    $judul = $_POST['judul_skripsih'];
+                    $Nim = $_POST['Nim'];
+                    $nama_mahasiswa = $_POST['nama_mahasiswa'];
+                    $kd_kelas = $_POST['kd_kelas'];
+                    $judul_skripsih = $_POST['judul_skripsih'];
                     $date = date("Y-m-d");
                     // Insert data
                     $sql_insert = "INSERT INTO submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
                         VALUES (?,?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
-                    $stmt->bindValue(1, $nim);
-                    $stmt->bindValue(2, $names);
-                    $stmt->bindValue(3, $kode);
-                    $stmt->bindValue(4, $judul);
+                    $stmt->bindValue(1, $Nim);
+                    $stmt->bindValue(2, $nama_mahasiswa);
+                    $stmt->bindValue(3, $kd_kelas);
+                    $stmt->bindValue(4, $judul_skripsih);
                     $stmt->bindValue(5, $date);
                     $stmt->execute();
                 } catch (Exception $e) {
