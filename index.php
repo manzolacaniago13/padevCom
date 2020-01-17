@@ -114,7 +114,8 @@
                         echo "<h2>Jumlah Pengajuan Judul Skripsi sudah mencapai : " . count($dataways) . " Orang.</h2>";
                         echo "<table class='table table-hover'><thead>";
                         echo "<th>NIM</th>";
-                        echo "<tr><th>Nama Mahasiswa</th>";
+                        echo "<tr><th>NIM</th>";
+                        echo "<th>Nama Mahasiswa</th>";
                         echo "<th>Kode Kelas</th>";
                         echo "<th>Judul Pengajuan (Skripsi)</th>";
                         echo "<th>Date</th></tr></thead><tbody>";
