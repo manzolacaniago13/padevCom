@@ -157,7 +157,7 @@
       <main role="main" class="container">
           <div class="starter-template text-center"> <br><br><br>
               <h3>FORMULIR PENGAJUAN SKRIPSI (BACHELOR'S DEGREE)</h3>
-              <h3>DI STMIK ERESHA</h3>
+              <h3>DI STMIK ERESHA</h3><tr>
                <span>Copyright &copy; <script>document.write(new Date().getFullYear());
 								</script> All rights reserved | Privacy & Terms <i class="fab fa-meetup" aria-hidden="true">	
 								</i> by <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
@@ -182,12 +182,12 @@
                   <input type="text" class="form-control" name="judul_skripsih" id="judul_skripsih" required="">
               </div>
 
-              <input type="submit" class="btn btn-success" name="submit" value="Submit">
+              <input type="submit" class="btn btn-default" name="submit" value="Submit">
           </form>
           <!-- <br><br> -->
           <form action="index.php" method="GET">
               <div class="form-group">
-                  <input type="submit" class="btn btn-info" name="load_data" value="Reload">
+                  <input type="submit" class="btn btn-default" name="load_data" value="Reload">
               </div>
           </form>
 
