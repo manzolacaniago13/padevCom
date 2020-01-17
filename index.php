@@ -83,8 +83,10 @@
                 $connectionInfo = array("UID" => "manzolacaniago", "pwd" => "{your_password_here}", "Database" => "padevcdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
                 $serverName = "tcp:padevappserver.database.windows.net,1433";
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
-          
         
+            ?>
+          
+        <?php
             if (isset($_POST['submit'])) {
                 try {
                     $nim = $_POST['Nim'];
