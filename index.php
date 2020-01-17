@@ -71,7 +71,7 @@
             <?php
               $host = "padevappserver.database.windows.net";
               $user = "manzolacaniago";
-              $pass = "P1234566a";
+              $pass = "";
               $db = "submissazure";
 
               try {
