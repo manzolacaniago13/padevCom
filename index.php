@@ -104,9 +104,10 @@
                 }
 
                echo "<h3>Your're registered!</h3>";
+              
             } else if (isset($_GET['load_data'])) {
                 try {
-                    $sql_select = "SELECT * FROM submissazure";
+                    $sql_select = "SELECT * FROM submissazure BY Nim DESC";
                     $stmt = $conn->query($sql_select);
                     $dataways = $stmt->fetchAll();
                     if (count($dataways) > 0) {
