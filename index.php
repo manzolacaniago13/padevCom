@@ -186,9 +186,7 @@
           </form>
           <!-- <br><br> -->
           <form action="index.php" method="GET">
-              <div class="form-group">
                   <input type="submit" class="btn btn-default" name="load_data" value="Reload">
-              </div>
           </form>
 
            <?php
