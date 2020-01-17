@@ -90,11 +90,11 @@
                     $judul_skripsih = $_POST['judul_skripsih'];
                     $date = date("Y-m-d");
                     // Insert data
-                    $sql_insert = "INSERT INTO submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
+                    $sql_insert = "INSERT INTO dbo.submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
                         VALUES (?,?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
                     $stmt->bindValue(1, $Nim);
-                    $stmt->bindValue(2, $nama_mahasiswa);
+                    $stmt->bindValue(2, $nama_mahasiswaa);
                     $stmt->bindValue(3, $kd_kelas);
                     $stmt->bindValue(4, $judul_skripsih);
                     $stmt->bindValue(5, $date);
@@ -120,7 +120,7 @@
                         echo "<th>Date</th></tr></thead><tbody>";
                         foreach ($dataways as $dataway) {
                             echo "<td>" . $dataway['Nim'] . "</td>";
-                            echo "<td>" . $dataway['nama_mahasiswa'] . "</td>";
+                            echo "<td>" . $dataway['nama_mahasiswaa'] . "</td>";
                             echo "<td>" . $dataway['kd_kelas'] . "</td>";
                             echo "<td>" . $dataway['judul_skripsih'] . "</td>";
                             echo "<td>" . $dataway['date'] . "</td></tr>";
