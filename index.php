@@ -68,7 +68,6 @@
               </div>
           </form>
 
-          <?php
            <?php
             // PHP Data Objects(PDO) Sample Code:
             try {
