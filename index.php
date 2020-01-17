@@ -93,7 +93,7 @@
                     $judul = $_POST['judul_skripsih'];
                     $date = date("Y-m-d");
                     // Insert data
-                    $sql_insert = "INSERT INTO submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
+                    $sql_insert = "INSERT INTO [dbo].[submissazure] (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
                         VALUES (?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
                     $stmt->bindValue(1, $nim);
@@ -106,25 +106,26 @@
                     echo "Failed: " . $e;
                 }
 
-                echo "<h3>Your're registered!</h3>";
+               echo "<h3>Your're registered!</h3>";
             } else if (isset($_GET['load_datah'])) {
                 try {
-                    $sql_select = "SELECT * FROM submissazure";
+                    $sql_select = "SELECT * FROM [dbo].[submissazure]";
                     $stmt = $conn->query($sql_select);
                     $dataways = $stmt->fetchAll();
                     if (count($dataways) > 0) {
-                        echo "<h2>Mahasiswa yang sudah teregistrasi kendaraannya sebanyak : " . count($dataways) . " Orang</h2>";
+                        echo "<h2>Jumlah Pengajuan Judul Skripsi sudah mencapai : " . count($dataways) . " Orang.</h2>";
                         echo "<table class='table table-hover'><thead>";
-                        echo "<tr><th>Name</th>";
                         echo "<th>NIM</th>";
-                        echo "<th>TKNB</th>";
+                        echo "<tr><th>Nama Mahasiswa</th>";
+                        echo "<th>Kode Kelas</th>";
+                        echo "<th>Judul Pengajuan (Skripsi)</th>";
                         echo "<th>Date</th></tr></thead><tbody>";
-                        foreach ($dataways as $dataway) {
-                            echo "<tr><td>" . $dataway['Nim'] . "</td>";
-                            echo "<td>" . $dataway['nama_mahasiswa'] . "</td>";
-                            echo "<td>" . $dataway['kd_kelas'] . "</td>";
-                            echo "<td>" . $dataway['judul_skripsih'] . "</td>";
-                            echo "<td>" . $dataway['date'] . "</td></tr>";
+                        foreach ($dataways as $dataways) {
+                            echo "<tr><td>" . $dataways['Nim'] . "</td>";
+                            echo "<td>" . $dataways['nama_mahasiswa'] . "</td>";
+                            echo "<td>" . $dataways['kd_kelas'] . "</td>";
+                            echo "<td>" . $dataways['judul_skripsih'] . "</td>";
+                            echo "<td>" . $dataways['date'] . "</td></tr>";
                         }
                         echo "</tbody></table>";
                     } else {
