@@ -16,6 +16,128 @@
 
       <!-- Custom styles for this template -->
       <link href="starter-template.css" rel="stylesheet">
+    
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: #000;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .version-drak {
+            background-color: #040940
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        a,
+        a:visited,
+        a:focus,
+        a:active,
+        a:hover {
+            text-decoration: none;
+            outline: none;
+        }
+
+        a,
+        button {
+            -webkit-transition: 0.3s;
+            transition: 0.3s
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button:focus {
+            outline: 0
+        }
+
+        a {
+            color: #2c3e50;
+            font-size: 14px
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3 {
+            font-weight: 800;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 60px;
+            line-height: 70px
+        }
+
+        h2 {
+            font-size: 45px;
+            line-height: 60px
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: 34px
+        }
+
+        h4 {
+            font-size: 20px;
+            line-height: 30px
+        }
+
+        h5 {
+            font-size: 18px;
+            line-height: 28px
+        }
+
+        h6 {
+            font-size: 16px;
+            line-height: 26px
+        }
+
+        p {
+            font-size: 16px;
+            color: #505b6d;
+            line-height: 26px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        li {
+            text-decoration: none;
+            list-style: none;
+            font-size: 17px;
+            line-height: 30px;
+        }
+
+        a {
+            font-size: 17px;
+            line-height: 30px;
+        }
+
+        .title {
+            padding: 50px;
+        }
+    </style>
 
   </head>
 
@@ -27,10 +149,7 @@
           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                      <a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="">XXX<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">STMIK ERESHA</a>
                   </li>
           </div>
       </nav>
