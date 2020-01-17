@@ -156,7 +156,7 @@
 
       <main role="main" class="container">
           <div class="starter-template text-center"> <br><br><br>
-              <h3>Pengajuan Skripsi STRATA 1</h3>
+              <h3>FORMULIR PENGAJUAN SKRIPSI (BACHELOR'S DEGREE)</h3>
               <h3>DI STMIK ERESHA</h3>
               <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
               <span class="border-top my-3"></span>
