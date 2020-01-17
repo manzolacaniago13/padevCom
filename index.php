@@ -47,8 +47,8 @@
                   <input type="text" class="form-control" name="Nim" id="Nim" required="">
               </div>
               <div class="form-group">
-                  <label for="nama_mahasiswa">Nama Mahasiswa : </label>
-                  <input type="text" class="form-control" name="nama_mahasiswa" id="nama_mahasiswa" required="">
+                  <label for="nama_mahasiswaa">Nama Mahasiswa : </label>
+                  <input type="text" class="form-control" name="nama_mahasiswaa" id="nama_mahasiswaa" required="">
               </div>
               <div class="form-group">
                   <label for="kd_kelas">Kode Kelas : </label>
@@ -85,12 +85,12 @@
             if (isset($_POST['submit'])) {
                 try {
                     $Nim = $_POST['Nim'];
-                    $nama_mahasiswa = $_POST['nama_mahasiswa'];
+                    $nama_mahasiswaa = $_POST['nama_mahasiswaa'];
                     $kd_kelas = $_POST['kd_kelas'];
                     $judul_skripsih = $_POST['judul_skripsih'];
                     $date = date("Y-m-d");
                     // Insert data
-                    $sql_insert = "INSERT INTO dbo.submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
+                    $sql_insert = "INSERT INTO dbo.submissazure (Nim, nama_mahasiswaa, kd_kelas, judul_skripsih, date) 
                         VALUES (?,?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
                     $stmt->bindValue(1, $Nim);
