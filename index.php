@@ -182,7 +182,7 @@
                   <input type="text" class="form-control" name="judul_skripsih" id="judul_skripsih" required="">
               </div>
 
-              <input type="submit" class="btn btn-default" name="submit" value="Submit">
+              <input type="submit" class="btn btn-succes" name="submit" value="Submit">
           </form>
           <!-- <br><br> -->
           <form action="index.php" method="GET">
