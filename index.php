@@ -59,18 +59,18 @@
                   <input type="text" class="form-control" name="judul_skripsih" id="judul" required="">
               </div>
 
-              <input type="submit" class="btn btn-success" name="submit" value="Submit Data Kendaraan">
+              <input type="submit" class="btn btn-success" name="submit" value="Submit">
           </form>
           <!-- <br><br> -->
           <form action="index.php" method="GET">
               <div class="form-group">
-                  <input type="submit" class="btn btn-info" name="load_datah" value="Lihat Data Yang Sudah Registrasi">
+                  <input type="submit" class="btn btn-info" name="load_datah" value="Reload">
               </div>
           </form>
 
           <?php
             $host = "padevappserver.database.windows.net";
-            $user = "manzolacaniago";
+            $user = "padevcdbserver";
             $pass = "P1234566a";
             $db = "submissazure";
 
