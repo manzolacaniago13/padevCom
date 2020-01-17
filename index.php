@@ -70,7 +70,7 @@
 
           <?php
             $host = "padevappserver.database.windows.net";
-            $user = "padevcdb";
+            $user = "manzolacaniago";
             $pass = "P1234566a";
             $db = "submissazure";
 
