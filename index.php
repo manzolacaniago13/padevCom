@@ -160,7 +160,7 @@
               <h3>DI STMIK ERESHA</h3><tr>
                <span>Copyright &copy; <script>document.write(new Date().getFullYear());
 								</script> All rights reserved | Privacy & Terms <i class="fab fa-meetup" aria-hidden="true">	
-								</i> by <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
+								</i> by <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p> <tr>
               <span class="border-top my-3"></span>
           </div>
 
@@ -182,7 +182,7 @@
                   <input type="text" class="form-control" name="judul_skripsih" id="judul_skripsih" required="">
               </div>
 
-              <input type="submit" class="btn btn-succes" name="submit" value="Submit">
+              <input type="submit" class="btn btn-primary" name="submit" value="Submit">
           </form>
           <!-- <br><br> -->
           <form action="index.php" method="GET">
@@ -222,7 +222,7 @@
                     echo "Failed: " . $e;
                 }
 
-               echo "<h3>Your're registered!</h3>";
+               echo "<h6>Pendaftaran Berhasil</h6>";
               
             } else if (isset($_GET['load_data'])) {
                 try {
@@ -230,7 +230,7 @@
                     $stmt = $conn->query($sql_select);
                     $dataways = $stmt->fetchAll();
                     if (count($dataways) > 0) {
-                        echo "<h2>Jumlah Pengajuan Judul Skripsi sudah mencapai : " . count($dataways) . " Orang.</h2>";
+                        echo "<h6>Jumlah Pengajuan Judul Skripsi sudah mencapai : " . count($dataways) . " Orang.</h6>";
                         echo "<table class='table table-hover'><thead>";
                         echo "<th>NIM</th>";
                         echo "<th>Nama Mahasiswa</th>";
@@ -244,7 +244,7 @@
                         }
                         echo "</tbody></table>";
                     } else {
-                        echo "<h3>No one is currently registered.</h3>";
+                        echo "<h6>No one is currently registered.</h6>";
                     }
                 } catch (Exception $e) {
                     echo "Failed: " . $e;
