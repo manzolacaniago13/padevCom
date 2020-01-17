@@ -64,7 +64,7 @@
           <!-- <br><br> -->
           <form action="index.php" method="GET">
               <div class="form-group">
-                  <input type="submit" class="btn btn-info" name="load_datah" value="Reload">
+                  <input type="submit" class="btn btn-info" name="load_data" value="Reload">
               </div>
           </form>
 
@@ -95,8 +95,8 @@
                     $judul = $_POST['judul_skripsih'];
                     $date = date("Y-m-d");
                     // Insert data
-                    $sql_insert = "INSERT INTO padevcdb (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
-                        VALUES (?,?,?,?)";
+                    $sql_insert = "INSERT INTO submissazure (Nim, nama_mahasiswa, kd_kelas, judul_skripsih, date) 
+                        VALUES (?,?,?,?,?)";
                     $stmt = $conn->prepare($sql_insert);
                     $stmt->bindValue(1, $nim);
                     $stmt->bindValue(2, $names);
@@ -109,9 +109,9 @@
                 }
 
                echo "<h3>Your're registered!</h3>";
-            } else if (isset($_GET['load_datah'])) {
+            } else if (isset($_GET['load_data'])) {
                 try {
-                    $sql_select = "SELECT * FROM padevcdb";
+                    $sql_select = "SELECT * FROM submissazure";
                     $stmt = $conn->query($sql_select);
                     $dataways = $stmt->fetchAll();
                     if (count($dataways) > 0) {
