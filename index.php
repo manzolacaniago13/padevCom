@@ -119,7 +119,7 @@
                         echo "<th>Judul Pengajuan (Skripsi)</th>";
                         echo "<th>Date</th></tr></thead><tbody>";
                         foreach ($dataways as $dataway) {
-                            echo "<tr><td>" . $dataway['Nim'] . "</td>";
+                            echo "<td>" . $dataway['Nim'] . "</td>";
                             echo "<td>" . $dataway['nama_mahasiswa'] . "</td>";
                             echo "<td>" . $dataway['kd_kelas'] . "</td>";
                             echo "<td>" . $dataway['judul_skripsih'] . "</td>";
