@@ -69,21 +69,17 @@
           </form>
 
             <?php
-                // PHP Data Objects(PDO) Sample Code:
-                try {
-                    $conn = new PDO("sqlsrv:server = tcp:padevappserver.database.windows.net,1433; Database = padevcdb", "manzolacaniago", "P1234566a");
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                }
-                catch (PDOException $e) {
-                    print("Error connecting to SQL Server.");
-                    die(print_r($e));
-                }
+            $host = "padevappserver.database.windows.net";
+            $user = "manzolacaniago";
+            $pass = "P1234566a";
+            $db = "submissazure";
 
-                // SQL Server Extension Sample Code:
-                $connectionInfo = array("UID" => "manzolacaniago", "pwd" => "P1234566a", "Database" => "padevcdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-                $serverName = "tcp:padevappserver.database.windows.net,1433";
-                $conn = sqlsrv_connect($serverName, $connectionInfo);
-            ?> 
+            try {
+                $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (Exception $e) {
+                echo "Failed: " . $e;
+            }
 
             if (isset($_POST['submit'])) {
                 try {
