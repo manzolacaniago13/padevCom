@@ -85,8 +85,6 @@
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
             ?>
         
-        <?php
-
             if (isset($_POST['submit'])) {
                 try {
                     $nim = $_POST['Nim'];
