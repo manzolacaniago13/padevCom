@@ -116,7 +116,7 @@
                         echo "<th>Kode Kelas</th>";
                         echo "<th>Judul Pengajuan (Skripsi)</th></tr></thead><tbody>";
                         foreach ($dataways as $dataway) {
-                            echo "<td>" . $dataway['Nim'] . "</td>";
+                            echo "<tr><td>" . $dataway['Nim'] . "</td>";
                             echo "<td>" . $dataway['nama_mahasiswaa'] . "</td>";
                             echo "<td>" . $dataway['kd_kelas'] . "</td>";
                             echo "<td>" . $dataway['judul_skripsih'] . "</td></tr>";;
