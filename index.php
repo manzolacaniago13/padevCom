@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="icon" href="">
+      <link rel="icon" href="https://manzolacaniago1306.firebaseapp.com/">
 
       <title>STMIK ERESHA (Daftar Skripsi)</title>
 
