@@ -107,7 +107,7 @@
               
             } else if (isset($_GET['load_data'])) {
                 try {
-                    $sql_select = "SELECT * FROM submissazure BY Nim DESC";
+                    $sql_select = "SELECT * FROM dbo.submissazure ";
                     $stmt = $conn->query($sql_select);
                     $dataways = $stmt->fetchAll();
                     if (count($dataways) > 0) {
