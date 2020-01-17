@@ -134,7 +134,7 @@
             line-height: 30px;
         }
 
-        .title {
+        .starter-template {
             padding: 50px;
         }
     </style>
@@ -155,8 +155,10 @@
       </nav>
 
       <main role="main" class="container">
-          <div class="starter-template"> <br><br><br>
-              <h1>Pengajuan Skripsi STRATA 1 di STMIK ERESHA</h1>
+          <div class="starter-template text-center"> <br><br><br>
+              <h3>Pengajuan Skripsi STRATA 1</h3>
+              <h3>DI STMIK ERESHA</h3>
+              <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
               <span class="border-top my-3"></span>
           </div>
 
