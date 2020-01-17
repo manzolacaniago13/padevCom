@@ -158,7 +158,9 @@
           <div class="starter-template text-center"> <br><br><br>
               <h3>FORMULIR PENGAJUAN SKRIPSI (BACHELOR'S DEGREE)</h3>
               <h3>DI STMIK ERESHA</h3>
-              <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
+               <span>Copyright &copy; <script>document.write(new Date().getFullYear());
+								</script> All rights reserved | Privacy & Terms <i class="fab fa-meetup" aria-hidden="true">	
+								</i> by <p>Manzola Caniago | Builder. Maker. Forward-Thinker.</p>
               <span class="border-top my-3"></span>
           </div>
 
