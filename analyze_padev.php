@@ -11,7 +11,7 @@ use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 $connectionString = "DefaultEndpointsProtocol=https;AccountName='padevstoreapp';AccountKey='AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q=='";
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 $connectionString = "AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q==";
-$containerName = "padevstoreapp";
+$containerName = "padevwebcontainer";
 
 if (isset($_POST['submit'])) {
 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
