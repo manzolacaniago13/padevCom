@@ -44,6 +44,13 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
   </head>
+	
+	<style>
+		.starter-template {
+		    padding: 50px;
+		}
+    	</style>
+
 <body>
 
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -61,9 +68,6 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
                 </li>
           </div>
       </nav>
-	      <br>
-	      <br>
-	      <br>
 	      
 	<main role="main" class="container">
     		<div class="starter-template"> <br>
