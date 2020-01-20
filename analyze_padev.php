@@ -71,6 +71,54 @@
 </script>
  
 <h1>Analyze image:</h1>
+    <main role="main" class="container">
+    		<div class="starter-template"> <br>
+        		<h1>Image Analyzer</h1>
+				<p class="lead">Pilih foto dari komputer yang ingin Anda analisis. lalu klik tombol <b>Upload</b> <br>Untuk memulai proses analisis foto, pilih tombol <b>Analyze!</b> pada pilihan gambar di masing-masing daftar.</p>
+				<span class="border-top my-3"></span>
+			</div>
+		<div class="mt-4 mb-2">
+			<form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
+				<input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
+				<input type="submit" name="submit" value="Upload">
+			</form>
+		</div>
+		<br>
+		<br>
+		<h4>Total Files : <?php echo sizeof($result->getBlobs())?></h4>
+		<table class='table table-hover'>
+			<thead>
+				<tr>
+					<th>File Name</th>
+					<th>File URL</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				do {
+					foreach ($result->getBlobs() as $blob)
+					{
+						?>
+						<tr>
+							<td><?php echo $blob->getName() ?></td>
+							<td><?php echo $blob->getUrl() ?></td>
+							<td>
+								<form action="testVision.php" method="post">
+									<input type="hidden" name="url" value="<?php echo $blob->getUrl()?>">
+									<input type="submit" name="submit" value="Analyze!" class="btn btn-primary">
+								</form>
+							</td>
+						</tr>
+						<?php
+					}
+					$listBlobsOptions->setContinuationToken($result->getContinuationToken());
+				} while($result->getContinuationToken());
+				?>
+			</tbody>
+		</table>
+
+	</div>
 Enter the URL to an image, then click the <strong>Analyze image</strong> button.
 <br><br>
 Image to analyze:
