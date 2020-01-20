@@ -9,7 +9,7 @@ use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=padevstoreapp;AccountKey=QPRw6WdFSVucmkdB9T7PIwsRw/2xV3rh9CfFauVd4sCiFEgWAmiLiHv7YIoq5JclwAUxdPRKRqO/OMqHFdlAKQ==;EndpointSuffix=core.windows.net";
-$containerName = "padevvision";
+$containerName = "padevwebcontainer";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 if (isset($_POST['submit'])) {
