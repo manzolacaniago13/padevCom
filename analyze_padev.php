@@ -61,6 +61,10 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
                 </li>
           </div>
       </nav>
+	      <br>
+	      <br>
+	      <br>
+	      
 	<main role="main" class="container">
     		<div class="starter-template"> <br>
         		<h1>Image Analyzer</h1>
