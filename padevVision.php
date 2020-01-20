@@ -28,10 +28,10 @@ if (isset($_POST['submit'])) {
     <script type="text/javascript">
         function processImage() {
 
-            var subscriptionKey = "c76d1e7be33240dc8f4fd5d2e17f9945";
+            var subscriptionKey = "d626ecc7104d41368589e1c70a70fe19";
 
             var uriBase =
-                "https://southeastasia.api.cognitive.microsoft.com/";
+                "https://southeastasia.api.cognitive.microsoft.com//vision/v2.0/analyze";
 
             var params = {
                 "visualFeatures": "Categories,Description,Color",
