@@ -8,8 +8,8 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "c76d1e7be33240dc8f4fd5d2e17f9945";
-$containerName = "padevstoreapp.blob.core.windows.net";
+$connectionString = "<YourKey>";
+$containerName = "<YourBlob>";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 if (isset($_POST['submit'])) {
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
 	// echo fread($content, filesize($fileToUpload));
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: analyze_padev.php");
+	header("Location: index.php");
 }
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
@@ -77,7 +77,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 							<td><?php echo $blob->getName() ?></td>
 							<td><?php echo $blob->getUrl() ?></td>
 							<td>
-								<form action="padevVision.php" method="post">
+								<form action="testVision.php" method="post">
 									<input type="hidden" name="url" value="<?php echo $blob->getUrl()?>">
 									<input type="submit" name="submit" value="Analyze!" class="btn btn-primary">
 								</form>
