@@ -8,21 +8,24 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=padevstoreapp;AccountKey=AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q==;EndpointSuffix=core.windows.net'";
+$blobClient = BlobRestProxy::createBlobService($connectionString);
 $connectionString = "AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q==";
 $containerName = "padevstoreapp";
-// Create blob client.
-$blobClient = BlobRestProxy::createBlobService($connectionString);
+
+
 if (isset($_POST['submit'])) {
 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
 	// echo fread($content, filesize($fileToUpload));
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: analyze_padev.php");
+	header("Location: index.php");
 }
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
 $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 ?>
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -31,7 +34,8 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Analisis Gambar</title>
+
+    <title>Image Analyzer App</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
@@ -42,24 +46,10 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
     <link href="starter-template.css" rel="stylesheet">
   </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">Home</a>
-			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="https://padevcwebapp.azurewebsites.net/analyze_padev.php">Analisis<span class="sr-only">(current)</span></a>
-			</li>
-		</div>
-		</nav>
-		<main role="main" class="container">
-    		<div class="starter-template"> <br><br><br>
-        		<h1>Analisis Gambar</h1>
-				<p class="lead">Pilih Gambar.<br> Kemudian Click <b>Upload</b>, untuk menganalisa foto pilih <b>analyze</b> pada tabel.</p>
+	<main role="main" class="container">
+    		<div class="starter-template"> <br>
+        		<h1>Image Analyzer</h1>
+				<p class="lead">Pilih foto dari komputer yang ingin Anda analisis. lalu klik tombol <b>Upload</b> <br>Untuk memulai proses analisis foto, pilih tombol <b>Analyze!</b> pada pilihan gambar di masing-masing daftar.</p>
 				<span class="border-top my-3"></span>
 			</div>
 		<div class="mt-4 mb-2">
