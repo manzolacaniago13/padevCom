@@ -8,7 +8,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=padevstoreapp;AccountKey=QPRw6WdFSVucmkdB9T7PIwsRw/2xV3rh9CfFauVd4sCiFEgWAmiLiHv7YIoq5JclwAUxdPRKRqO/OMqHFdlAKQ==;EndpointSuffix=core.windows.net";
+$connectionString = "AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q==";
 $containerName = "padevstoreapp";
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
