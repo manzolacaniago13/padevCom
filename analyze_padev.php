@@ -1,4 +1,28 @@
+<?php
+require_once 'vendor/autoload.php';
+require_once "./random_string.php";
 
+use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
+use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
+use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
+use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
+
+$connectionString = "c76d1e7be33240dc8f4fd5d2e17f9945";
+$containerName = "padevwebcontainer";
+// Create blob client.
+$blobClient = BlobRestProxy::createBlobService($connectionString);
+if (isset($_POST['submit'])) {
+	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
+	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+	// echo fread($content, filesize($fileToUpload));
+	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
+	header("Location: index.php");
+}
+$listBlobsOptions = new ListBlobsOptions();
+$listBlobsOptions->setPrefix("");
+$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+?>
 
 <!DOCTYPE html>
 <html>
