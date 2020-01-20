@@ -1,14 +1,3 @@
-<?php
-if (isset($_POST['submit'])) {
-    if (isset($_POST['url'])) {
-        $url = $_POST['url'];
-    } else {
-        header("Location: analyze_padev.php");
-    }
-} else {
-    header("Location: analyze_padev.php");
-}
-?>
 
 <!DOCTYPE html>
 <html>
