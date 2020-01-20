@@ -1,5 +1,28 @@
+<?php
+require_once 'vendor/autoload.php';
+require_once "./random_string.php";
 
+use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
+use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
+use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
+use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
+$connectionString = "AezyZJW7BF75wR90SvF5ShWX5MeGI2e0Owe2ktyHtt9bncXQpe9+Fiwdb2DFQtukapbH0ZCyw7CeP9tmi0rE/Q==";
+$containerName = "padevwebcontainer";
+// Create blob client.
+$blobClient = BlobRestProxy::createBlobService($connectionString);
+if (isset($_POST['submit'])) {
+	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
+	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+	// echo fread($content, filesize($fileToUpload));
+	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
+	header("Location: analyze.php");
+}
+$listBlobsOptions = new ListBlobsOptions();
+$listBlobsOptions->setPrefix("");
+$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -8,7 +31,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Analisis Gamabar</title>
+    <title>Analisis Gambar</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
@@ -26,17 +49,17 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="http://gillydicoding.azurewebsites.net/">Home</a>
+				<a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">Home</a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="http://gillydicoding.azurewebsites.net/analyze.php">Analisis<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="https://padevcwebapp.azurewebsites.net/analyze_padev.php">Analisis<span class="sr-only">(current)</span></a>
 			</li>
 		</div>
 		</nav>
 		<main role="main" class="container">
     		<div class="starter-template"> <br><br><br>
         		<h1>Analisis Gambar</h1>
-				<p class="lead">Pilih Gambar.<br> Kemudian Click <b>Upload</b>, untuk menganlisa foto pilih <b>analyze</b> pada tabel.</p>
+				<p class="lead">Pilih Gambar.<br> Kemudian Click <b>Upload</b>, untuk menganalisa foto pilih <b>analyze</b> pada tabel.</p>
 				<span class="border-top my-3"></span>
 			</div>
 		<div class="mt-4 mb-2">
