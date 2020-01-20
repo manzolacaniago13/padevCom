@@ -147,10 +147,14 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-              <ul class="navbar-nav mr-auto">
+               <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                      <a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">STMIK ERESHA</a>
+                      
+                      <a class="nav-link" href="https://padevcwebapp.azurewebsites.net/">Home</a>
                   </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="https://padevcwebapp.azurewebsites.net/analyze_padev.php">Analyze<span class="sr-only">(current)</span></a>
+                </li>
           </div>
       </nav>
 
