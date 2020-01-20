@@ -3,10 +3,10 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['url'])) {
         $url = $_POST['url'];
     } else {
-        header("Location: index.php");
+        header("Location: analyze_padev.php");
     }
 } else {
-    header("Location: index.php");
+    header("Location: analyze_padev.php");
 }
 ?>
 
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
             var subscriptionKey = "c76d1e7be33240dc8f4fd5d2e17f9945";
 
             var uriBase =
-                "https://southeastasia.api.cognitive.microsoft.com//vision/v2.0/analyze";
+                "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
                 
             var params = {
                 "visualFeatures": "Categories,Description,Color",
